@@ -1,0 +1,24 @@
+@media screen and (min-width: 768px){
+	.b-image{
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.b-image{
+		width: 100%;
+	}
+
+}
+.sad{
+	color: gray;
+}
+
+
+body::-webkit-scrollbar{
+	display: none;
+}
+body{
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
