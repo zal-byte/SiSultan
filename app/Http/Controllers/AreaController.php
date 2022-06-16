@@ -4,16 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\KotaModel;
+use App\Models\KecamatanModel;
 
 class AreaController extends Controller
 {
     //
 
     public function show(){
-        return view('area.main', ['data'=>KotaModel::paginate(6)]);
+        return view('area.main', ['data'=>KotaModel::all()]);
     }
 
     public function page( $area ){
-        return view('area.show', ['data'=>KotaModel::where('kota_nama', $area)->first()]);
+        $data = KotaModel::where('nama','=', $area)->first();
+
+        
+        return view('area.show', ['data'=>$data]);
     }
+
+
+    
 }

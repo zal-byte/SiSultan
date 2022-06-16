@@ -14,13 +14,17 @@ class UsahaMigration extends Migration
     public function up()
     {
         //
+        Schema::dropIfExists('usaha');
         Schema::create('usaha', function(Blueprint $table){
             $table->id();
             $table->text("nama_perusahaan");
             $table->string('pemilik', 100);
-            $table->string("kota",100);
-            $table->string("kecamatan", 100);
-            $table->string("desa", 100);
+            $table->unsignedBigInteger('id_kota');
+            $table->unsignedBigInteger('id_kecamatan');
+            $table->unsignedBigInteger('id_desa');
+            $table->foreign('id_kecamatan')->references('id')->on('kecamatan')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_kota')->references('id')->on('kota')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_desa')->references('id')->on('desa')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

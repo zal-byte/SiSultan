@@ -52,12 +52,12 @@
 
 <div class="container-fluid bg-dark pl-2 pr-2 pt-3 pb-2">
 	<p class="text-center">
-		<img src="{{asset('img/city_img/' . $data->kota_gambar)}}" class="img-fluid b-image rounded">
+		<img src="{{asset('img/city_img/' . $data->gambar)}}" class="img-fluid b-image rounded">
 		<h3 class="text-white text-center">
-			{{ $data->kota_nama }}
+			{{ $data->nama }}
 		</h3>
 		<p class="text-white text-center">
-			{{ $data->kota_tentang }}
+			{{ $data->luas }} &#13221;
 		</p>
 	</p>
 </div>

@@ -99,48 +99,24 @@
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid mt-4">
-			<div class="d-flex justify-content-center">
-				<div class="row">
-					@if( isset($data) )
-
-					@foreach( $data as $info )
-					<div class="col-md">
-						<div class="card border-0 shadow" style="width: 18rem; min-height: 350px;">
-							<img src="{{asset('img/city_img/' . $info->kota_gambar)}}" class="card-img-top">
-							<div class="card-body">
-								<h4 class="font-weight-bold">
-									{!! $info->kota_nama !!}
-								</h4>
-								<p>
-									@php
-										if( strlen($info->kota_tentang) > 30 ){
-											print_r(substr($info->kota_tentang,0,30) . "...");
-										}else{
-											print_r($info->kota_tentang);
-										}
-									@endphp
-								</p>
-							</div>
-							<div class="card-footer">
-								<a href="/area/{{$info->kota_nama}}"><button class="btn btn-primary">
-									See more
-								</button></a>
-							</div>
+		<div class="container-fluid mt-2">
+			<div class="card border-0 shadow">
+				<div class="card-body">
+					<h2 class="font-weight-bold">
+						Luas 
+					</h2>
+					<hr>
+					@if(isset($data))
+						<div class="d-flex flex-wrap justify-content-center">
+							@foreach($data as $s)
+							<button type="button" class="btn btn-primary m-1">
+								{{$s['nama']}} <span class="badge bg-dark">{{$s['luas']}} &#13221; </span>
+							</button>
+							@endforeach
 						</div>
-					</div>
-
-					@endforeach
-					@else
-
-
 					@endif
 				</div>
-
 			</div>
-			<div class="d-flex justify-content-center mt-2">
-				{{$data->links()}}
-			</div> 
 		</div>
 	</div>
 
