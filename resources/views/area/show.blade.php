@@ -15,6 +15,56 @@
 			font-family: 'eudoxus';
 			background-color: #f5f5f5;
 		}
+
+	
+	.thumbnail{
+		position: relative;
+		padding: 0px;
+		margin-right: 10px;
+		width: 20%;
+
+	}
+	
+	li{
+		cursor: pointer;
+	}
+
+	.img-cat{
+		cursor: pointer;
+		box-shadow: 1px 1px 10px #999;
+		height: 100%;
+	}
+
+	.caption{
+		position: absolute;
+		bottom: 10px;
+		left: 20px;
+		color: white;
+		text-shadow: 1px 1px 1px black;
+	}
+
+	@media screen and (min-width: 768px){
+		.img-cat{
+			width: 100%;
+		}
+	}
+
+	@media screen and (max-width: 768px){
+		.img-cat{
+			width: 100%;
+		}
+		.cen{
+			text-align: center !important;
+		}
+
+	}
+
+	.hor-scroll{
+		overflow-y: hidden;
+		overflow-x: auto;
+		width: 100%;
+		white-space: nowrap;
+	}
 	</style>
 </head>
 <body>
@@ -44,50 +94,147 @@
 
 @else
 
-	<nav class="navbar bg-dark shadow sticky-top p-2">
+	<nav class="navbar shadow sticky-top p-2" style="background-color: #1E0973;">
 		<a href="/area" class="text-decoration-none">
 			<button class="btn btn-primary text-white" style="min-width: 100px;"> <span class="fa-solid fa-arrow-left"></span> Back </button>
 		</a>
 	</nav>
 
-<div class="container-fluid bg-dark pl-2 pr-2 pt-3 pb-2">
-	<p class="text-center">
-		<img src="{{asset('img/city_img/' . $data->gambar)}}" class="img-fluid b-image rounded">
-		<h3 class="text-white text-center">
-			{{ $data->nama }}
-		</h3>
-		<p class="text-white text-center">
-			{{ $data->luas }} &#13221;
-		</p>
-	</p>
-</div>
+	<div class="container-fluid bg-dark text-white">
+		<img src="{{asset('img/garut.png')}}" class="img-fluid">
+	</div>	
+		<div class="d-flex justify-content-center mt-2 p-2">
+			<div class="form-group w-100" style="margin-right:10px;">
+				<select class="form-select">
+					<option>Apa yang kamu cari?</option>
+					<option>Madu</option>
+					<option>Kayu</option>
+				</select>
+			</div>
+			<div class="form-group w-100">
+				<select class="form-select">
+					<option>Pilih kategori</option>
+					<option>Madu</option>
+					<option>Kayu</option>
+				</select>
+			</div>
+		</div>
 
-<div class="container mt-2 pb-4">
-	<div class="d-flex justify-content-center">
-		<div class="row">
-			<div class="col-sm">
-				<div class="card border-0 shadow" style="width:15rem;">
-					<div class="card-body bg-white p-0">
-						<img src="{{asset('img/tree.png')}}" class="card-img-top bg-success" >
-						<p class="m-2 text-center">
-								Potensi Hutan
-						</p>
+		<div class="d-flex justify-content-center mt-5">
+			<h2 class="font-weight-bold text-center" style="color: #1E0973;">
+				<b>Kategori Populer</b>
+			</h2>
+		</div>
+
+		<div class="container mt-5 mb-2 w-100">
+			<div class="d-flex flex-row justify-content-center">
+				<div class="thumbnail">
+					<img src="https://www.mongabay.co.id/wp-content/uploads/2013/04/Aji-Wihardandi-0843.jpg" alt="" class=" img-cat" style="border-radius: 20px;">
+					<div class="caption">
+						<b> Kayu </b>
 					</div>
 				</div>
-			</div>
-			<div class="col-sm">
-				<div class="card border-0 shadow" style="width:15rem;">
-					<div class="card-body bg-white p-0">
-						<img src="{{asset('img/fruit.png')}}" class="card-img-top img-fluid p-3 bg-success" >
-						<p class="m-2 text-center">
-								Potensi Buah
-						</p>
+				<div class="thumbnail">
+					<img src="https://asset.kompas.com/crops/XqxnReSYcqJDlKgFvptTLNwYrSU=/11x12:838x563/750x500/data/photo/2018/09/09/4168352272.jpg" alt="" class=" img-cat" style="border-radius: 20px;">
+					<div class="caption">
+						<b> Madu </b>
+					</div>
+				</div>
+				<div class="thumbnail">
+					<img src="https://i2.wp.com/gdm.id/wp-content/uploads/2019/11/cara-budidaya-jamur-tiram-1152x675.jpg" alt="" class=" img-cat" style="border-radius: 20px;">
+					<div class="caption">
+						<b> Jamur </b>
+					</div>
+				</div>
+				<div class="thumbnail">
+					<img src="https://cdn-brilio-net.akamaized.net/community/2019/11/28/23327/image_1574830643_5dde023328ca5.jpg" alt="" class=" img-cat" style="border-radius: 20px;">
+					<div class="caption">
+						<b> Hutan lindung </b>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+
+		<div class="container mt-4 p-4 mb-2">
+			<div class="d-flex">
+				<h4 class="font-weight-bold">
+					<b>Sambutan kepala dinas perhutani</b>
+				</h4>
+			</div>
+			<div class="d-flex justify-content-center">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="card border-0 shadow-sm">
+							<div class="card-body">
+								<p>Assalammu'alaikum Warrahmatullahi Wabarakatuh</p>
+								<i>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua.
+								</i>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm">
+						<p class="cen">
+							<img src="https://www.tempias.com/wp-content/uploads/2021/02/Endung-Trihartaka-direktur-perhutani-pilihan-erick-thohir.png" class="img-fluid rounded shadow-sm mt-2" style="height: 128px;">
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="container mt-2">
+				<b> Lorem Ipsum </b>
+				<p style="color:gray;">
+					Kepala Dinas Kebudayaan dan Pariwisata Kabupaten Barat
+				</p>
+			</div>
+
+			<div class="d-flex justify-content-center mt-5">
+				<h2 class="font-weight-bold">
+					<b style="color:#1E0973;">
+						Objek Wisata Hutan Jawa Barat
+					</b>
+				</h2>
+			</div>
+			<div class="container mt-5">
+				<div class="row justify-content-center">
+					<div class="col-sm">
+						<div class="embed-responsive embed-responsive-1by1">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/ES8vJcUqE7s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="embed-responsive-item"></iframe>				
+						</div>
+					</div>
+					<div class="col-sm">
+						<blockquote class="twitter-tweet"><p lang="in" dir="ltr">Bahagia rasanya di hari Senin ini memulai kegiatan dengan meresmikan Sumedang Creative Center. Gedung ini merupakan investasi jangka panjang untuk mewadahi kreativitas. Insyaallah hasilnya bisa dipanen di masa yg akan datang. <a href="https://twitter.com/hashtag/JabarJuara?src=hash&amp;ref_src=twsrc%5Etfw">#JabarJuara</a> <a href="https://twitter.com/hashtag/IndonesiaJuara?src=hash&amp;ref_src=twsrc%5Etfw">#IndonesiaJuara</a> -admin- <a href="https://t.co/EZIGtOn2lP">pic.twitter.com/EZIGtOn2lP</a></p>&mdash; Ridwan Kamil (@ridwankamil) <a href="https://twitter.com/ridwankamil/status/1538840796539105281?ref_src=twsrc%5Etfw">June 20, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="text-center text-lg-start" style=" background-color:#1E0973; min-height: 100px; height: 200px;">
+			<section class="d-flex justify-content-center jutify-content-lg-between p-4">
+				<div class="me-5 d-none d-lg-block">
+					<span>
+						<a href="#" class="nav-link text-white">TENTANG KAMI</a>
+					</span>
+				</div>
+				<div class="me-4 text-reset">
+					<span>
+						<a href="#" class="nav-link text-white">TAUTAN</a>
+					</span>
+				</div>
+				<div class="me-4 text-reset">
+					<span>
+						<a href="#" class="nav-link text-white">PROFIL</a>
+					</span>
+				</div>
+				<div class="me-4 text-reset">
+					<span>
+						<a href="#" class="nav-link text-white">INFORMASI KONTAK</a>
+					</span>
+				</div>
+			</section>
+		</footer>
+
 @endif
 
 <script type="text/javascript" src="{{asset('js/app.js')}}"></script>

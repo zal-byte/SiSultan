@@ -7,6 +7,25 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/icon/bs-icon/bootstrap-icons.css')}}">
     <title>Dashboard</title>
 </head>
+<style type="text/css">
+    .nav-link{
+        color: white !important;
+    }
+    .nav-link i{
+        color: blue;
+    }
+    .nav-link span{
+        color: blue;
+    }
+    hr{
+        clear: both;
+        display: block;
+        border: 0;
+        width: 100%;
+        background-color: white;
+        height: 1px;
+    }
+</style>
 <body>
 <div class="container-fluid">
     <div class="row flex-nowrap">
@@ -21,80 +40,80 @@
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
-                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
-                            </li>
-                        </ul>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="{{route('input_data_hasil_hutan')}}" class="nav-link align-middle px-0">
+                            <span class="fa fa-solid fa-add"></span>
+                            Input Data Industri
+                        </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <span class="fa fa-solid fa-file"></span>
+                            Data Wilayah
+                        </a>
                     </li>
-                    <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
-                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
-                            </li>
-                        </ul>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-items-center px-0">
+                            <span class="fa fa-solid fa-file"></span>
+                            Data Profile Daerah
+                        </a>
                     </li>
-                    <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
-                            </li>
-                        </ul>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <span class="fa fa-solid fa-file"></span>
+                            Data Lokasi Wisata
+                        </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                    <hr>
+                    <li class="nav-item">
+                        <a onclick="$('#logoutModal').modal('show');" class="nav-link">
+                            <span class="fa fa-solid fa-sign-out">
+                            </span>
+                            Keluar
+                        </a>
                     </li>
                 </ul>
-                <hr>
-                <div class="dropdown pb-4">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">loser</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="{{route('logout')}}">Sign out</a></li>
-                    </ul>
-                </div>
+                
+
+
             </div>
         </div>
         <div class="col py-3">
-            Content area...
+            @yield('body_dashboard')
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="logoutModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="fa fa-solid fa-2x fa-sign-out"></span>
+                    <h3 class="font-weight-bold">
+                        Keluar ?
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">
+                        Apakah kamu yakin ingin keluar?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="{{route('logout')}}">
+                        <button class="btn btn-secondary">
+                            Keluar
+                        </button>
+                    </a>
+                    <a onclick="$('#logoutModal').modal('hide');">
+                        <button class="btn btn-primary text-white">
+                            Batal
+                        </button>   
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
 </body>
 </html>

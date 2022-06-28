@@ -17,50 +17,13 @@
 		font-family: 'eudoxus';
 
 	}
-	.thumbnail{
-		position: relative;
-		padding: 0px;
-		margin-right: 10px;
-		width: 20%;
-
-	}
-	
-	li{
+	#meinNav a{
 		cursor: pointer;
 	}
 
-	.img-cat{
+
+	.list-group-item{
 		cursor: pointer;
-		box-shadow: 1px 1px 10px #999;
-		height: 100%;
-	}
-	.caption{
-		position: absolute;
-		bottom: 10px;
-		left: 20px;
-		color: white;
-		text-shadow: 1px 1px 1px black;
-	}
-	@media screen and (min-width: 768px){
-		.img-cat{
-			width: 100%;
-		}
-	}
-	@media screen and (max-width: 768px){
-		.img-cat{
-			width: 100%;
-		}
-		.cen{
-			text-align: center !important;
-		}
-
-	}
-
-	.hor-scroll{
-		overflow-y: hidden;
-		overflow-x: auto;
-		width: 100%;
-		white-space: nowrap;
 	}
 </style>
 <body>
@@ -89,7 +52,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="myNav">
-				<ul class="navbar-nav ms-auto text-white">
+				<ul class="navbar-nav ms-auto text-white" id="meinNav">
 					<li class="nav-item">
 						<a class="nav-link">
 							Home
@@ -120,104 +83,19 @@
 		</nav>
 	</div>
 
-	<div class="container-fluid bg-dark text-white">
-		<img src="{{asset('img/garut.png')}}" class="img-fluid">
-	</div>	
-		<div class="d-flex justify-content-center mt-2 p-2">
-			<div class="form-group w-100" style="margin-right:10px;">
-				<select class="form-select">
-					<option>Apa yang kamu cari?</option>
-					<option>Madu</option>
-					<option>Kayu</option>
-				</select>
-			</div>
-			<div class="form-group w-100">
-				<select class="form-select">
-					<option>Pilih kategori</option>
-					<option>Madu</option>
-					<option>Kayu</option>
-				</select>
-			</div>
-		</div>
-
-		<div class="d-flex justify-content-center mt-5">
-			<h2 class="font-weight-bold text-center" style="color: #1E0973;">
-				<b>Kategori Populer</b>
-			</h2>
-		</div>
-
-		<div class="container mt-2 mb-2 w-100">
-			<div class="d-flex flex-row justify-content-center">
-				<div class="thumbnail">
-					<img src="https://www.mongabay.co.id/wp-content/uploads/2013/04/Aji-Wihardandi-0843.jpg" alt="" class=" img-cat" style="border-radius: 20px;">
-					<div class="caption">
-						<b> Kayu </b>
-					</div>
-				</div>
-				<div class="thumbnail">
-					<img src="https://asset.kompas.com/crops/XqxnReSYcqJDlKgFvptTLNwYrSU=/11x12:838x563/750x500/data/photo/2018/09/09/4168352272.jpg" alt="" class=" img-cat" style="border-radius: 20px;">
-					<div class="caption">
-						<b> Madu </b>
-					</div>
-				</div>
-				<div class="thumbnail">
-					<img src="https://i2.wp.com/gdm.id/wp-content/uploads/2019/11/cara-budidaya-jamur-tiram-1152x675.jpg" alt="" class=" img-cat" style="border-radius: 20px;">
-					<div class="caption">
-						<b> Jamur </b>
-					</div>
-				</div>
-				<div class="thumbnail">
-					<img src="https://cdn-brilio-net.akamaized.net/community/2019/11/28/23327/image_1574830643_5dde023328ca5.jpg" alt="" class=" img-cat" style="border-radius: 20px;">
-					<div class="caption">
-						<b> Hutan lindung </b>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container mt-4 p-4 mb-2">
-			<div class="d-flex">
-				<h4 class="font-weight-bold">
-					<b>Sambutan kepala dinas perhutani</b>
-				</h4>
-			</div>
-			<div class="d-flex justify-content-center">
-				<div class="row">
-					<div class="col-sm-9">
-						<div class="card border-0 shadow-sm">
-							<div class="card-body">
-								<p>Assalammu'alaikum Warrahmatullahi Wabarakatuh</p>
-								<i>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua.
-								</i>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm">
-						<p class="cen">
-							<img src="https://www.tempias.com/wp-content/uploads/2021/02/Endung-Trihartaka-direktur-perhutani-pilihan-erick-thohir.png" class="img-fluid rounded shadow-sm mt-2" style="height: 128px;">
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="container mt-2">
-				<b> Lorem Ipsum </b>
-				<p style="color:gray;">
-					Kepala Dinas Kebudayaan dan Pariwisata Kabupaten Barat
-				</p>
-			</div>
-
-			<div class="d-flex justify-content-center mt-5">
-				<h2 class="font-weight-bold">
-					<b style="color:#1E0973;">
-						Objek Wisata Hutan Jawa Barat
-					</b>
-				</h2>
-			</div>
-
-		</div>
+	<div class="container-fluid	bg-dark text-white p-2">
+		<h3 class="display-4">
+			Selamat Datang
+		</h3>
+		<p class="lead">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	</div>
 
 	<div class="container" >
 		<div class="d-flex justify-content-center">
@@ -225,9 +103,23 @@
 				<div class="card-body p-0">
 					<div class="frame-body">
 						@yield('map')
-						<h4 class="text-white">
-							Jawa Barat
-						</h4>
+						<ul class="list-group list-group-horizontal p-1">
+							<li class="list-group-item bg-primary">
+								<a class="nav-link text-white">
+									Potensi Hutan
+								</a>
+							</li>
+							<li class="list-group-item bg-primary">
+								<a class="nav-link text-white">
+									Luas Wilayah
+								</a>
+							</li>
+							<li class="list-group-item bg-primary">
+								<a class="nav-link text-white">
+									Hutan Lindung
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -254,6 +146,30 @@
 
 	<br>
 
+		<footer class="text-center text-lg-start" style=" background-color:#1E0973; min-height: 100px; height: 200px;">
+			<section class="d-flex justify-content-center jutify-content-lg-between p-4">
+				<div class="me-5 d-none d-lg-block">
+					<span>
+						<a href="#" class="nav-link text-white">TENTANG KAMI</a>
+					</span>
+				</div>
+				<div class="me-4 text-reset">
+					<span>
+						<a href="#" class="nav-link text-white">TAUTAN</a>
+					</span>
+				</div>
+				<div class="me-4 text-reset">
+					<span>
+						<a href="#" class="nav-link text-white">PROFIL</a>
+					</span>
+				</div>
+				<div class="me-4 text-reset">
+					<span>
+						<a href="#" class="nav-link text-white">INFORMASI KONTAK</a>
+					</span>
+				</div>
+			</section>
+		</footer>
 <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/panzoom.min.js')}}"></script>
 <script type="text/javascript">

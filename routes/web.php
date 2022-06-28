@@ -17,6 +17,8 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard/input_data', [AdminController::class, 'input_data_hasil_hutan'])->name('input_data_hasil_hutan');
+Route::post('/dashboard/input_data', [AdminController::class, 'postInput_data_hasil_hutan'])->name('postInput_data_hasil_hutan');
 Route::get('/logout', [AdminController::class,'logout'])->name('logout');
 
 Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
