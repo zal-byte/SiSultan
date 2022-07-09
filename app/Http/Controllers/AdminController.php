@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Validator;
 
-use App\Models\InputDataHasilHutanModel;
+use App\Models\UsahaModel;
 
 class AdminController extends Controller
 {
@@ -18,21 +18,11 @@ class AdminController extends Controller
     public function dashboard(){
         return view('dashboard');
     }
-    public function input_data_hasil_hutan(){
-        return view('admin.input_data_hasil_hutan');
+    public function input_data_industri(){
+        return view('admin.input_data_industri');
     }
-    public function postInput_data_hasil_hutan(Request $request){
+    public function postInput_data_industri(Request $request){
         $validate = Validator::make($request->all(),[
-            'alamat'=>'required',
-            'longtitude'=>'required',
-            'latitude'=>'required',
-            'telp_fax'=>'required',
-            'kapasitas'=>'required',
-            'nama_penerbit'=>'required',
-            'no_reg'=>'required',
-            'masa_berlaku'=>'required',
-            'pemilik'=>'required',
-            'wilayah'=>'required',
             'nama_perusahaan'=>'required'
         ]);
 
@@ -40,11 +30,10 @@ class AdminController extends Controller
             return back()->withErrors($validate)->withInput();
         }
 
-        $hasil_hutan = new InputDataHasilHutanModel();
+        $hasil_hutan = new UsahaModel();
         $hasil_hutan->nama_perusahaan = $request->nama_perusahaan;
         $hasil_hutan->alamat = $request->alamat;
-        $hasil_hutan->longtitude = $request->longtitude;
-        $hasil_hutan->latitude = $request->latitude;
+        $hasil_hutan->koordinat = $request->koordinat;
         $hasil_hutan->telp_fax = $request->telp_fax;
         $hasil_hutan->kapasitas = $request->kapasitas;
         $hasil_hutan->nama_penerbit_fako = $request->nama_penerbit;

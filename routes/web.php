@@ -17,8 +17,8 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-Route::get('/dashboard/input_data', [AdminController::class, 'input_data_hasil_hutan'])->name('input_data_hasil_hutan');
-Route::post('/dashboard/input_data', [AdminController::class, 'postInput_data_hasil_hutan'])->name('postInput_data_hasil_hutan');
+Route::get('/dashboard/input_data', [AdminController::class, 'input_data_industri'])->name('input_data_industri');
+Route::post('/dashboard/input_data', [AdminController::class, 'postInput_data_industri'])->name('postInput_data_industri');
 Route::get('/logout', [AdminController::class,'logout'])->name('logout');
 
 Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
@@ -31,3 +31,7 @@ Route::get('/usr_city/{email}', [TestController::class, 'get_user_kota']);
 Route::get('/area/{area}', [AreaController::class, 'page']);
 Route::get('/area', [AreaController::class, 'show'])->name('area');
 Route::get("/", [AreaController::class,'show']);
+
+
+// TEST
+Route::get('/getUsaha/{id_kota}', [TestController::class, 'getUsaha']);

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\KecamatanModel;
 use App\Models\DesaModel;
 use App\Models\UserModel;
+use App\Models\UsahaModel;
 
 class KotaModel extends Model
 {
@@ -23,5 +24,9 @@ class KotaModel extends Model
     }
     public function user(){
         return $this->belongsTo(UserModel::class);
+    }
+
+    public function usaha(){
+        return $this->hasMany(UsahaModel::class, 'id_kota');
     }
 }

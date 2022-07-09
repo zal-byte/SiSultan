@@ -114,11 +114,6 @@
 									Luas Wilayah
 								</a>
 							</li>
-							<li class="list-group-item bg-primary">
-								<a class="nav-link text-white">
-									Hutan Lindung
-								</a>
-							</li>
 						</ul>
 					</div>
 				</div>
@@ -127,7 +122,7 @@
 
 	</div>
 
-	<div class="container">
+<!-- 	<div class="container">
 		<div class="flexs d-flex justify-content-center">
 			<div class="card border-0 shadow desc" style="border-radius: 0px 30px 30px 0px;">
 				<div class="card-body" style="padding-left: 0px; padding-top: 0px; padding-bottom: 0px;">
@@ -139,6 +134,65 @@
 							Jawa Barat sebagai pengertian administratif mulai digunakan pada tahun 1925 ketika Pemerintah Hindia Belanda membentuk Provinsi Jawa Barat. Pembentukan provinsi itu sebagai pelaksanaan Bestuurshervormingwet tahun 1922, yang membagi Hindia Belanda atas kesatuan-kesatuan daerah provinsi.
 						</p>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+
+	<div class="container">
+		<div class="d-flex justify-content-center">
+			<div class="card border-0 shadow">
+				<div class="card-body">
+					<table class="table">
+						<thead>
+							<tr>
+								<td>
+									Nama Perusahaan
+								</td>
+								<td>
+									Produk
+								</td>
+								<td>
+									Alamat
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+							@if(isset($data))
+								@foreach($data as $dd)
+						<tr>
+							<td>
+								{{$dd->nama_perusahaan}}
+							</td>
+							<td>
+								@if(strlen($dd->produk)>0)
+									{{$dd->produk}}
+								@else
+									<i><u> Tidak ada keterangan </u></i>
+								@endif
+							</td>
+							<td>
+								@if(strlen($dd->alamat)>0)
+									{{$dd->alamat}}
+								@else
+									<i> <u>Tidak ada alamat</u> </i>
+								@endif
+							</td>
+							<td>
+								@if(strlen($dd->koordinat)>0)
+									<a href="{{$dd->koordinat}}" target="_blank">
+										<button class="btn btn-primary text-white"> <span class="fa fa-solid fa-map"></span> Buka </button>
+									</a>
+								@else
+									<button class="btn btn-danger text-white disabled"> Tidak ada koordinat </button>
+								@endif
+							</td>	
+						</tr>
+								@endforeach
+							@endif
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>

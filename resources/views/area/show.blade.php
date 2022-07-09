@@ -27,6 +27,7 @@
 	
 	li{
 		cursor: pointer;
+
 	}
 
 	.img-cat{
@@ -65,12 +66,12 @@
 		width: 100%;
 		white-space: nowrap;
 	}
+
 	</style>
 </head>
 <body>
 <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
-
-@if( !$data )
+@if( count($data) <= 0 )
 
 	<div class="d-flex flex-column min-vh-100 ">
       <div class="d-flex flex-grow-1 justify-content-center align-items-center">
@@ -79,7 +80,7 @@
       			<span class="fa-solid fa-face-frown fa-7x sad"></span>
       		</p>
       		<h4 class="text-center">
-      			Area Not Found
+      			Area or Data not available
       		</h4>
       		<p class="text-center">
 	      		<a href="/area" class="text-decoration-none">
@@ -102,6 +103,24 @@
 
 	<div class="container-fluid bg-dark text-white">
 		<img src="{{asset('img/garut.png')}}" class="img-fluid">
+
+		<ul class="list-group list-group-horizontal p-1">
+			<li class="list-group-item bg-primary og">
+				<a class="nav-link text-white">
+					Potensi Hutan
+				</a>
+			</li>
+			<li class="list-group-item bg-primary">
+				<a class="nav-link text-white">
+					Luas wilayah
+				</a>
+			</li>
+			<li class="list-group-item bg-primary">
+				<a class="nav-link text-white">
+					Lorem
+				</a>
+			</li>
+		</ul>
 	</div>	
 		<div class="d-flex justify-content-center mt-2 p-2">
 			<div class="form-group w-100" style="margin-right:10px;">
@@ -183,10 +202,59 @@
 			</div>
 
 			<div class="container mt-2">
-				<b> Lorem Ipsum </b>
-				<p style="color:gray;">
-					Kepala Dinas Kebudayaan dan Pariwisata Kabupaten Barat
-				</p>
+				<table class="table" style="height:400px;">
+					<thead>
+						<tr>
+							<td>
+								Nama Perusahaan
+							</td>
+							<td>
+								Produk
+							</td>
+							<td>
+								Alamat
+							</td>
+							<td>
+								Koordinat
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach($data as $d)
+						<tr>
+							<td>
+								{{$d->nama_perusahaan}}
+							</td>
+							<td>
+								@if(strlen($d->produk)>0)
+									{{$d->produk}}
+								@else
+									<i><u> Tidak ada keterangan </u></i>
+								@endif
+							</td>
+							<td>
+								@if(strlen($d->alamat)>0)
+									{{$d->alamat}}
+								@else
+									<i> <u>Tidak ada alamat</u> </i>
+								@endif
+							</td>
+							<td>
+								@if(strlen($d->koordinat)>0)
+									<a href="{{$d->koordinat}}" target="_blank">
+										<button class="btn btn-primary text-white"> <span class="fa fa-solid fa-map"></span> Buka </button>
+									</a>
+								@else
+									<button class="btn btn-danger text-white disabled"> Tidak ada koordinat </button>
+								@endif
+							</td>	
+						</tr>
+						@endforeach
+					</tbody>
+				</table>
+				<div class="d-flex justify-content-center">
+					{{ $data->links() }}
+				</div>
 			</div>
 
 			<div class="d-flex justify-content-center mt-5">

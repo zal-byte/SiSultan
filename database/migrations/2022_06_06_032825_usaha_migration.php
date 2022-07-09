@@ -17,14 +17,19 @@ class UsahaMigration extends Migration
         Schema::dropIfExists('usaha');
         Schema::create('usaha', function(Blueprint $table){
             $table->id();
-            $table->text("nama_perusahaan");
-            $table->string('pemilik', 100);
+            $table->string('nama_perusahaan');
+            $table->text('koordinat')->nullable();
+            $table->text('alamat')->nullable();
+            $table->string('telp_fax')->nullable();
+            $table->string('produk')->nullable();
+            $table->string('nama_penerbit_fako')->nullable();
+            $table->string('no_reg')->nullable();
+            $table->string('kapasitas')->nullable();
+            $table->string('masa_berlaku')->nullable();
+            $table->string('pemilik')->nullable();
             $table->unsignedBigInteger('id_kota');
-            $table->unsignedBigInteger('id_kecamatan');
-            $table->unsignedBigInteger('id_desa');
-            $table->foreign('id_kecamatan')->references('id')->on('kecamatan')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_kota')->references('id')->on('kota')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_desa')->references('id')->on('desa')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_kota')->references('id')->on('kota')->onUpdate('cascade')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

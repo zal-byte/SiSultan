@@ -10,17 +10,11 @@
 	<div class="container mt-2">
 		<div class="card border-0 shadow">
 			<div class="card-body">
-				<form method="post" action="{{route('postInput_data_hasil_hutan')}}" enctype="multipart/form-data">
+				<form method="post" action="{{route('postInput_data_industri')}}" enctype="multipart/form-data">
 					@csrf
-					<div class="row">
-						<div class="col-sm">
-							<label>Longtitude</label>
-							<input type="text" name="longtitude" class="form-control" placeholder="Longtitude">
-						</div>
-						<div class="col-sm">
-							<label>Latitude</label>
-							<input type="text" name="latitude" class="form-control" placeholder="Latituded">
-						</div>
+					<div class="form-group">
+						<label> Koordinat </label>
+						<input type="text" class="form-control" name="koordinat" placeholder="Koordinat industri">
 					</div>
 					<div class="form-group">
 						<label>
@@ -36,7 +30,7 @@
 					</div>
 					<div class="form-group">
 						<label> No Telp. / Fax.</label>
-						<input type="text" name="telp_fax" class="form-control" placeholder="No Telp. Fax" required>
+						<input type="text" name="telp_fax" class="form-control" placeholder="No Telp. Fax">
 					</div>	
 					<div class="form-group">
 						<label>
@@ -60,13 +54,13 @@
 						<label>
 							NO. REG
 						</label>
-						<input type="text" name="no_reg" class="form-control" placeholder="No REG" required>
+						<input type="text" name="no_reg" class="form-control" placeholder="No REG" >
 					</div>
 					<div class="form-group">
 						<label>
 							Masa berlaku
 						</label>
-						<input type="date" class="form-control" name="masa_berlaku" placeholder="Masa berlaku" required>
+						<input type="date" class="form-control" name="masa_berlaku" placeholder="Masa berlaku" >
 					</div>
 					<div class="form-group">
 						<label>
@@ -79,7 +73,7 @@
 						<label>
 							Wilayah
 						</label>
-						<select class="form-select" name="wilayah">
+						<select class="form-select" name="wilayah" required>
 							@if(isset($kota))
 								@foreach($kota as $data)
 								<option value="{{$data->id}}"> {{$data->nama}}

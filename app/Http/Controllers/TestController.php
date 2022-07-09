@@ -24,6 +24,11 @@ class TestController extends Controller
         echo "</pre>";
     }
 
+    public function getUsaha( $id_kota ){
+        $usaha = UsahaModel::where('id_kota', '=', $id_kota)->get();
+        return $usaha;        
+    }
+
     public function get_usaha( $val ){
         $usaha = UsahaModel::find(1)->firstOrFail();
         echo $usaha;

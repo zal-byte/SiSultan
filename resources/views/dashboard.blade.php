@@ -36,13 +36,13 @@
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
+                        <a href="{{route('dashboard')}}" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
                     <hr>
                     <li class="nav-item">
-                        <a href="{{route('input_data_hasil_hutan')}}" class="nav-link align-middle px-0">
+                        <a href="{{route('input_data_industri')}}" class="nav-link align-middle px-0">
                             <span class="fa fa-solid fa-add"></span>
                             Input Data Industri
                         </a>
@@ -67,7 +67,7 @@
                     </li>
                     <hr>
                     <li class="nav-item">
-                        <a onclick="$('#logoutModal').modal('show');" class="nav-link">
+                        <a onclick="$('#logoutModal').modal('show');" class="nav-link" style="cursor: pointer;">
                             <span class="fa fa-solid fa-sign-out">
                             </span>
                             Keluar
